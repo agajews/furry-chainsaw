@@ -20,11 +20,6 @@ class MainController: UIViewController, UITextFieldDelegate {
         self.name_field.delegate = self
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func submit(_ sender: Any) {
         if name_field.text == "" {

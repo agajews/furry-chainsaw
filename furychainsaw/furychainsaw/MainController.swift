@@ -28,12 +28,12 @@ class MainController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         // if this is true, then don't popup view
-        if let _ = UserDefaults.standard.value(forKey: "ffirst") {
+        if let _ = UserDefaults.standard.value(forKey: "fffirst") {
         }else {
             // manages the onboarding screen
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "of")
-            UserDefaults.standard.setValue("hasLaunched", forKey: "ffirst")
+            UserDefaults.standard.setValue("hasLaunched", forKey: "fffirst")
             self.present(controller, animated: true, completion: nil)
         }
     }

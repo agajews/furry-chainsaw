@@ -9,6 +9,7 @@
 import UIKit
 
 class OnFirstViewController: UIViewController, UITextFieldDelegate {
+    var CON_KEY = "contacts_array"
 
     // defining textfields
     @IBOutlet weak var firstname_1: UITextField!
@@ -19,7 +20,8 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastname_2: UITextField!
     @IBOutlet weak var phone_2: UITextField!
     
-    
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // allowing this controller to retrieve information from the textfields
@@ -58,17 +60,39 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
     }
     */
     @IBAction func submit(_ sender: Any) {
-        if firstname_1.text == "" || lastname_1.text == "" || phone_1.text == "" || firstname_2.text == "" || lastname_2.text == "" || phone_2.text == "" {
+        var new_id = 0
+        var tempContacts = [Contact]()
+        if firstname_1.text == "" || lastname_1.text == "" || phone_1.text == "" {
             // show alert
             showAlert(error: "You didn't fill everything out!")
         }else {
-            // store in defaults
-            let defaults = UserDefaults.standard
-            defaults.setValue(firstname_1.text, forKey: "firstname_1")
-            defaults.setValue(phone_1.text, forKey: "phone_1")
-            print("Submit pressed")
+            if let data = defaults.data(forKey: CON_KEY), let myContacts = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Contact] {
+                if myContacts != [] {
+                    new_id = (myContacts.last?.id)! + 1
+                    tempContacts = myContacts
+                }
+            }
+            let newContact = Contact(firstname : firstname_1.text!, lastname : lastname_1.text!, phone : Int(phone_1.text!)!, id : new_id)
+            if tempContacts.count == 0 {
+                tempContacts = [newContact]
+                // assigns athlete value initially since count = 0
+                let encoded = NSKeyedArchiver.archivedData(withRootObject: tempContacts)
+                defaults.set(encoded, forKey: CON_KEY)
+            }else {
+                tempContacts.append(newContact)
+                // reassigns athletes value
+                defaults.removeObject(forKey: CON_KEY)
+                let encoded = NSKeyedArchiver.archivedData(withRootObject: tempContacts)
+                defaults.set(encoded, forKey: CON_KEY)
+                
+            }
+            // dismisses view
             dismiss(animated: true, completion: nil)
+            // let description and phone number be optional
         }
+
+        dismiss(animated: true, completion: nil)
+        
     }
     
     // shows appropriate alert

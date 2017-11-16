@@ -14,6 +14,10 @@
 		CF3F4AC61FBE378200399FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AC41FBE378200399FC2 /* LaunchScreen.storyboard */; };
 		CF3F4AD11FBE378200399FC2 /* furychainsawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AD01FBE378200399FC2 /* furychainsawUITests.swift */; };
 		CF3F4ADC1FBE40AA00399FC2 /* OnFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */; };
+		CF3F4ADE1FBE48E900399FC2 /* ContactBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4ADD1FBE48E900399FC2 /* ContactBookViewController.swift */; };
+		CF3F4AE11FBE49E200399FC2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE01FBE49E200399FC2 /* Contact.swift */; };
+		CF3F4AE31FBE4DC100399FC2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */; };
+		CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		CF3F4AD01FBE378200399FC2 /* furychainsawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = furychainsawUITests.swift; sourceTree = "<group>"; };
 		CF3F4AD21FBE378200399FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstViewController.swift; sourceTree = "<group>"; };
+		CF3F4ADD1FBE48E900399FC2 /* ContactBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBookViewController.swift; sourceTree = "<group>"; };
+		CF3F4AE01FBE49E200399FC2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		CF3F4ABA1FBE378200399FC2 /* furychainsaw */ = {
 			isa = PBXGroup;
 			children = (
+				CF3F4ADF1FBE49CD00399FC2 /* Contact */,
 				CF3F4ABB1FBE378200399FC2 /* AppDelegate.swift */,
 				CF3F4ABD1FBE378200399FC2 /* MainController.swift */,
 				CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */,
@@ -97,6 +106,17 @@
 				CF3F4AD21FBE378200399FC2 /* Info.plist */,
 			);
 			path = furychainsawUITests;
+			sourceTree = "<group>";
+		};
+		CF3F4ADF1FBE49CD00399FC2 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				CF3F4AE01FBE49E200399FC2 /* Contact.swift */,
+				CF3F4ADD1FBE48E900399FC2 /* ContactBookViewController.swift */,
+				CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */,
+				CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3F4AE31FBE4DC100399FC2 /* ContactTableViewCell.swift in Sources */,
+				CF3F4ADE1FBE48E900399FC2 /* ContactBookViewController.swift in Sources */,
 				CF3F4ADC1FBE40AA00399FC2 /* OnFirstViewController.swift in Sources */,
+				CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */,
+				CF3F4AE11FBE49E200399FC2 /* Contact.swift in Sources */,
 				CF3F4ABE1FBE378200399FC2 /* MainController.swift in Sources */,
 				CF3F4ABC1FBE378200399FC2 /* AppDelegate.swift in Sources */,
 			);

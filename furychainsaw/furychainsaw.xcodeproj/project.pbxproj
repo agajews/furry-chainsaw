@@ -13,6 +13,7 @@
 		CF3F4AC31FBE378200399FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AC21FBE378200399FC2 /* Assets.xcassets */; };
 		CF3F4AC61FBE378200399FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AC41FBE378200399FC2 /* LaunchScreen.storyboard */; };
 		CF3F4AD11FBE378200399FC2 /* furychainsawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AD01FBE378200399FC2 /* furychainsawUITests.swift */; };
+		CF3F4ADC1FBE40AA00399FC2 /* OnFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		CF3F4ACC1FBE378200399FC2 /* furychainsawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = furychainsawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F4AD01FBE378200399FC2 /* furychainsawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = furychainsawUITests.swift; sourceTree = "<group>"; };
 		CF3F4AD21FBE378200399FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				CF3F4ABB1FBE378200399FC2 /* AppDelegate.swift */,
 				CF3F4ABD1FBE378200399FC2 /* MainController.swift */,
+				CF3F4ADB1FBE40AA00399FC2 /* OnFirstViewController.swift */,
 				CF3F4ABF1FBE378200399FC2 /* Main.storyboard */,
 				CF3F4AC21FBE378200399FC2 /* Assets.xcassets */,
 				CF3F4AC41FBE378200399FC2 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3F4ADC1FBE40AA00399FC2 /* OnFirstViewController.swift in Sources */,
 				CF3F4ABE1FBE378200399FC2 /* MainController.swift in Sources */,
 				CF3F4ABC1FBE378200399FC2 /* AppDelegate.swift in Sources */,
 			);

@@ -10,14 +10,12 @@ import UIKit
 
 class MainController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var name_field: UITextField!
     
  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.name_field.delegate = self
         
     }
 
@@ -26,13 +24,20 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func submit(_ sender: Any) {
-        if name_field.text == "" {
-            print("didn't finish filling stuff out")
+  
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // if this is true, then don't popup view
+        if let _ = UserDefaults.standard.value(forKey: "ffirst") {
         }else {
-            print("you filled everything out!")
+            // manages the onboarding screen
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "of")
+            UserDefaults.standard.setValue("hasLaunched", forKey: "ffirst")
+            self.present(controller, animated: true, completion: nil)
         }
     }
+
 
 
 }

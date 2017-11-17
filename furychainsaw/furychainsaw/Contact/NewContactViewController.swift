@@ -70,6 +70,9 @@ class NewContactViewController: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     func showAlert(error : String) {
         // creates alert controller with a title, message, and style
         let alertController = UIAlertController(title: "Error!", message:

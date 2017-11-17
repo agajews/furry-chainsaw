@@ -26,8 +26,6 @@ class ContactBookViewController: UIViewController, UITableViewDelegate, UITableV
         // get the names of all athletes
         if let data = defaults.data(forKey: CON_KEY), let myContacts = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Contact] {
             contacts = myContacts
-            // print("test")
-            // print(contacts.count)
         }
         table.reloadData()
     }
@@ -69,10 +67,12 @@ class ContactBookViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContactTableViewCell
         // fills each cell value
-        cell.firstname.text = (contacts[indexPath.row].firstname.capitalized)
-//        cell.name.text = (athletes[indexPath.row].name).capitalized
-//        cell.grade.text = String(athletes[indexPath.row].grade)
-//        cell.runnerImageView.image = UIImage(named: "runner.png")
+//        var first : String = ""
+//        var last : String = ""
+        let first = String(contacts[indexPath.row].firstname.capitalized) + " "
+        let last = String(contacts[indexPath.row].lastname.capitalized)
+        let fullname : String = (first + last)
+        cell.fullname.text = fullname
         return cell
     }
     
@@ -112,7 +112,8 @@ class ContactBookViewController: UIViewController, UITableViewDelegate, UITableV
                 contacts = myContacts
             }
             // sends destination values
-            destination.sentFirstName = self.contacts[detailIndex].firstname
+            destination.sentFullName = self.contacts[detailIndex].firstname + " " + self.contacts[detailIndex].lastname
+            destination.sentPhone = self.contacts[detailIndex].phone
         }
     }
 

@@ -17,9 +17,6 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastname_1: UITextField!
     @IBOutlet weak var phone_1: UITextField!
     
-    @IBOutlet weak var firstname_2: UITextField!
-    @IBOutlet weak var lastname_2: UITextField!
-    @IBOutlet weak var phone_2: UITextField!
     
     let defaults = UserDefaults.standard
 
@@ -30,9 +27,6 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         self.lastname_1.delegate = self
         self.phone_1.delegate = self
         
-        self.firstname_2.delegate = self
-        self.lastname_2.delegate = self
-        self.phone_2.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +39,6 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         firstname_1.resignFirstResponder()
         lastname_1.resignFirstResponder()
         phone_1.resignFirstResponder()
-        firstname_2.resignFirstResponder()
-        lastname_2.resignFirstResponder()
-        phone_2.resignFirstResponder()
         
     }
 

@@ -22,6 +22,6 @@ class ContactTableViewCell: UITableViewCell {
     }
     
     
-    @IBOutlet weak var firstname: UILabel!
+    @IBOutlet weak var fullname: UILabel!
     
 }

@@ -35,6 +35,7 @@ let twilioUrl = "https://api.twilio.com/2010-04-01/Accounts/\(twilioAccount)/Mes
 let fbUrl = "http://162.243.139.187/api/postfb/"
 let hrvUrl = "http://162.243.139.187/api/posthrv/"
 let tempUrl = "http://162.243.139.187/api/posttemp/"
+let mockUrl = "http://162.243.139.187/api/mockday"
 
 let mockHrv: [Double] = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
 
@@ -157,12 +158,13 @@ class Data: NSObject {
     
     func mockSadDay() {
         if !sentSecondHeart {
-            for (idx, hrv) in mockHrv[firstDay + 1...secondDay].enumerated() {
+            /* for (idx, hrv) in mockHrv[firstDay + 1...secondDay].enumerated() {
                 Alamofire.request(hrvUrl + "\(hrv)/\(firstDay + 1 + idx)" , method: .get)
             }
             for (idx, temp) in mockTemp[firstDay + 1...secondDay].enumerated() {
                 Alamofire.request(tempUrl + "\(temp)/\(firstDay + 1 + idx)" , method: .get)
-            }
+            }*/
+            Alamofire.request(mockUrl , method: .get)
             sendText(to: mockPhone, body: "X is depressed")
             sentSecondHeart = true
         }
@@ -171,19 +173,22 @@ class Data: NSObject {
     func fetchData() {
         print("Setting up data fetching")
         
-        for (idx, hrv) in mockHrv[0...firstDay].enumerated() {
+        /* for (idx, hrv) in mockHrv[0...firstDay].enumerated() {
             Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .get)
         }
         for (idx, temp) in mockTemp[0...firstDay].enumerated() {
             Alamofire.request(tempUrl + "\(temp)/\(idx)" , method: .get)
-        }
+        } */
     
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: {timer in
             print("fetching now")
             // let baseline = mockHrv[0...currentDay].reduce(0, +) / mockHeartvar.count
             // print(baseline)
             
-            self.updatePosts()
+            // self.updatePosts()
+            if sentSecondHeart {
+                Alamofire.request(mockUrl , method: .get)
+            }
         })
     }
 }

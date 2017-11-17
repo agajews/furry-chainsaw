@@ -2,8 +2,9 @@
 ## Depression Detection -- Connecting People in Times of Need
 
 When we are depressed or feeling sad, talking to a friend is often the best way to find our center. However,
-	1) People often underestimate just how bad they're feeling
-	2) It's really hard to actively reach out for help, *especially* when we are depressed and need it the most
+	
+	1. People often underestimate just how bad they're feeling
+	2. It's really hard to actively reach out for help, *especially* when we are depressed and need it the most
 
 We decided to fix both of these problems by leveraged background data, specifically heart rate and social media posts, to detect when someone is feeling down, and automatically notify a friend so they can check in and make sure everything is okay.
 

@@ -9,6 +9,9 @@
 import Foundation
 import ToneAnalyzerV3
 import Alamofire
+import FacebookCore
+
+let connection = GraphRequestConnection()
 
 let username = "ea1084fe-510b-4010-bbd0-7ef2a085e119"
 let password = "WzYSjsR18jgZ"
@@ -29,15 +32,18 @@ let mockBody = "Test Text"
 
 let twilioUrl = "https://api.twilio.com/2010-04-01/Accounts/\(twilioAccount)/Messages.json"
 
-let mockHeartvar = [
-    107, 71, 102, 100, 95, 78, 90, 85, 107, 81, 70, 68, 70, 83, 70, 72, 74, 71, 69, 78, 83, 96, 67, 101, 74, 80, 78, 82, 47, 61, 77, 86, 52, 116, 69, 56, 67, 62, 84, 74, 52, 53, 88, 52, 64, 81, 62, 46, 39, 61, 71, 32, 41, 86, 55, 33, 48, 40, 62, 55, 29, 55, 86, 52, 35, 45, 49, 53, 69, 76
-]
+let fbUrl = "http://ec2-52-37-127-238.us-west-2.compute.amazonaws.com/api/postfb/"
+
+let mockHeartvar = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
 
 var currentDay = 60
 
 
 class Data: NSObject {
     var lowVariability = false
+    var newestDate: Date? = nil
+    var targetCount = 0
+    var allPosts: [(Date, Double)] = []
     func requestScore(text: String, cb: @escaping (Double) -> Void) {
         toneAnalyzer.getTone(ofText: text, failure: failure) { tones in
             var sadness: Double = 0
@@ -64,23 +70,85 @@ class Data: NSObject {
         }
     }
     
+    func updatePosts() {
+        if AccessToken.current != nil {
+            struct MyProfileRequest: GraphRequestProtocol {
+                struct Response: GraphResponseProtocol {
+                    var messages: [(Date, String)] = []
+                    init(rawResponse: Any?) {
+                        let dict = rawResponse as! NSDictionary
+                        let posts = dict["posts"] as! NSDictionary
+                        let listOfPosts = posts["data"] as! NSArray
+                        for post in listOfPosts {
+                            let p = post as! NSDictionary
+                            if let message = p["message"] {
+                                let created_time = p["created_time"] as! String
+                                let m = message as! String
+                                let dateFormatter = DateFormatter()
+                                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                                let date = dateFormatter.date(from: created_time)!
+                                messages.append((date, m))
+                            }
+                            
+                        }
+                    }
+                }
+                
+                var graphPath = "/me"
+                var parameters: [String : Any]? = ["fields": "id, name, posts.limit(500)"]
+                var accessToken = AccessToken.current
+                var httpMethod: GraphRequestHTTPMethod = .GET
+                var apiVersion: GraphAPIVersion = .defaultVersion
+            }
+            
+            
+            let connection = GraphRequestConnection()
+            let oldCount = allPosts.count
+            print(oldCount)
+            connection.add(MyProfileRequest()) { http, result in
+                switch result {
+                case .success(let response):
+                    let newMessages = response.messages.filter{m in self.newestDate == nil || m.0 > self.newestDate!}
+                    self.targetCount += newMessages.count
+                    for post in newMessages {
+                        self.requestScore(text: post.1, cb: {score in
+                            self.allPosts.append((post.0, score))
+                            if self.allPosts.count == self.targetCount {
+                                self.allPosts.sort(by: {(a, b) in a.0 < b.0})
+                                self.newestDate = self.allPosts[self.allPosts.count - 1].0
+                                let newPosts = self.allPosts[oldCount...oldCount + newMessages.count - 1]
+                                for (idx, newPost) in newPosts.enumerated() {
+                                    Alamofire.request(fbUrl + "\(newPost.1)/\(idx)" , method: .post)
+                                }
+                            }
+                        })
+                    }
+                    
+                case .failed(let error):
+                    print(error)
+                }
+                
+            }
+            connection.start()
+        }
+    }
+    
     func mockSadDay() {
         lowVariability = true
         currentDay = 69
     }
     
     func fetchData() {
-        print("Fetching data")
-        requestScore(text: "I'm feeling pretty sad right now", cb: {sadness in
-            print(sadness)
+        print("Setting up data fetching")
+    
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {timer in
+            print("fetching now")
+            let baseline = mockHeartvar[0...currentDay].reduce(0, +) / mockHeartvar.count
+            print(baseline)
+            
+            self.updatePosts()
         })
     }
-    
-    var timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {timer in
-        print("fetching now")
-        let baseline = mockHeartvar[0...currentDay].reduce(0, +) / mockHeartvar.count
-        print(baseline)
-    })
 }
 
 let data = Data()

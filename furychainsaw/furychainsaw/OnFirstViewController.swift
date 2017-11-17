@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
 
 
 class OnFirstViewController: UIViewController, UITextFieldDelegate {
@@ -27,6 +29,10 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         self.lastname_1.delegate = self
         self.phone_1.delegate = self
         
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, ReadPermission.custom("user_posts") ])
+        loginButton.center = view.center
+        
+        view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {

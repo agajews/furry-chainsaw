@@ -20,19 +20,23 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         if HKHealthStore.isHealthDataAvailable() {
+            print("Here")
             let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
             let readTypes = Set([quantityType])
             
+            print("Requesting authorization")
             healthStore.requestAuthorization(toShare: Set(), read: readTypes) { (success, error) -> Void in
                 if success == false {
                     print("Display not allowed")
                 }
             }
+            print("Authorized")
             
             let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
             
             // we create our query with a block completion to execute
             let query = HKSampleQuery(sampleType: quantityType, predicate: nil, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+                print(tmpResult)
                 if error != nil {
                     print("HK error")
                     return
@@ -41,21 +45,21 @@ class MainController: UIViewController, UITextFieldDelegate {
                 if let result = tmpResult {
                     // do something with my data
                     for item in result {
-                        if let sample = item as? HKCategorySample {
-                            let value = (sample.value == HKCategoryValueSleepAnalysis.InBed.rawValue) ? "InBed" : "Asleep"
-                            print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-                        }
+                        print(item)
                     }
                 }
             }
-            
-            healthStore.executeQuery(query)
+            print("Executing query")
+            healthStore.execute(query)
+            print("Done")
             
             // let quantity = HKQuantity(unit: HKUnit(from: "count/min"), doubleValue: 72.0)
             // let quantitySample = HKQuantitySample(type: quantityType!, quantity: quantity, start: someDateTime!, end: Date())
             
             // print(quantitySample)
             
+        } else {
+            print("Health data not available")
         }
         self.name_field.delegate = self
         

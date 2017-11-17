@@ -12,6 +12,13 @@ class ContactDetailViewController: UIViewController {
 
     var sentFirstName : String = ""
 
+    @IBOutlet weak var firstnameLabel: UILabel!
+    override func viewWillAppear(_ animated: Bool) {
+        // sets labels to corresponding cell values
+        firstnameLabel.text = sentFirstName
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

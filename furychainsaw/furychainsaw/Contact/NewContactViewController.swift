@@ -1,5 +1,5 @@
 //
-//  OnFirstViewController.swift
+//  NewContactViewController.swift
 //  furychainsaw
 //
 //  Created by Ashwin Aggarwal on 11/16/17.
@@ -8,30 +8,30 @@
 
 import UIKit
 
-class OnFirstViewController: UIViewController, UITextFieldDelegate {
-    var CON_KEY = "contacts_array"
+class NewContactViewController: UIViewController, UITextFieldDelegate {
 
-    // defining textfields
-    @IBOutlet weak var firstname_1: UITextField!
-    @IBOutlet weak var lastname_1: UITextField!
-    @IBOutlet weak var phone_1: UITextField!
-    
-    @IBOutlet weak var firstname_2: UITextField!
-    @IBOutlet weak var lastname_2: UITextField!
-    @IBOutlet weak var phone_2: UITextField!
-    
+    var CON_KEY = "contacts_array"
     let defaults = UserDefaults.standard
 
+    @IBOutlet weak var firstnameField: UITextField!
+    
+    @IBOutlet weak var lastnameField: UITextField!
+    
+    @IBOutlet weak var phoneField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // allowing this controller to retrieve information from the textfields
-        self.firstname_1.delegate = self
-        self.lastname_1.delegate = self
-        self.phone_1.delegate = self
-        
-        self.firstname_2.delegate = self
-        self.lastname_2.delegate = self
-        self.phone_2.delegate = self
+        self.firstnameField.delegate = self
+        self.lastnameField.delegate = self
+        self.phoneField.delegate = self
+    }
+    
+    func dismissKeyboard(){ /*this is a void function*/
+        // dismisses keyboards
+        firstnameField.resignFirstResponder()
+        lastnameField.resignFirstResponder()
+        phoneField.resignFirstResponder()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,30 +39,10 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func dismissKeyboard(){ /*this is a void function*/
-         // This will dismiss our keyboard on tap
-        firstname_1.resignFirstResponder()
-        lastname_1.resignFirstResponder()
-        phone_1.resignFirstResponder()
-        firstname_2.resignFirstResponder()
-        lastname_2.resignFirstResponder()
-        phone_2.resignFirstResponder()
-        
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func submit(_ sender: Any) {
-        var new_id = 0
+    @IBAction func addContact(_ sender: Any) {
         var tempContacts = [Contact]()
-        if firstname_1.text == "" || lastname_1.text == "" || phone_1.text == "" {
+        var new_id : Int = 0
+        if firstnameField.text == "" || lastnameField.text == "" || phoneField.text == "" {
             // show alert
             showAlert(error: "You didn't fill everything out!")
         }else {
@@ -72,7 +52,7 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
                     tempContacts = myContacts
                 }
             }
-            let newContact = Contact(firstname : firstname_1.text!, lastname : lastname_1.text!, phone : Int(phone_1.text!)!, id : new_id)
+            let newContact = Contact(firstname : firstnameField.text!, lastname : lastnameField.text!, phone : Int(phoneField.text!)!, id : new_id)
             if tempContacts.count == 0 {
                 tempContacts = [newContact]
                 // assigns athlete value initially since count = 0
@@ -80,7 +60,7 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
                 defaults.set(encoded, forKey: CON_KEY)
             }else {
                 tempContacts.append(newContact)
-                // reassigns athletes value
+                // reassigns contact value
                 defaults.removeObject(forKey: CON_KEY)
                 let encoded = NSKeyedArchiver.archivedData(withRootObject: tempContacts)
                 defaults.set(encoded, forKey: CON_KEY)
@@ -88,11 +68,8 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
             }
             // dismisses view
             dismiss(animated: true, completion: nil)
-            // let description and phone number be optional
-        }        
+        }
     }
-    
-    // shows appropriate alert
     func showAlert(error : String) {
         // creates alert controller with a title, message, and style
         let alertController = UIAlertController(title: "Error!", message:
@@ -101,5 +78,14 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         // required to show the alert
         self.present(alertController, animated: true, completion: nil)
     }
-    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

@@ -18,6 +18,7 @@
 		CF3F4AE11FBE49E200399FC2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE01FBE49E200399FC2 /* Contact.swift */; };
 		CF3F4AE31FBE4DC100399FC2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */; };
 		CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */; };
+		CF3F4AE71FBE5AC400399FC2 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CF3F4AE01FBE49E200399FC2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3F4AE01FBE49E200399FC2 /* Contact.swift */,
+				CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */,
 				CF3F4ADD1FBE48E900399FC2 /* ContactBookViewController.swift */,
 				CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */,
 				CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */,
@@ -228,6 +231,7 @@
 				CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */,
 				CF3F4AE11FBE49E200399FC2 /* Contact.swift in Sources */,
 				CF3F4ABE1FBE378200399FC2 /* MainController.swift in Sources */,
+				CF3F4AE71FBE5AC400399FC2 /* NewContactViewController.swift in Sources */,
 				CF3F4ABC1FBE378200399FC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

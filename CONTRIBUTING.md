@@ -1,6 +1,6 @@
-# Contibuting to Furry Chainsaw
+# Contibuting to The Bridge
 
-Welcome to the Furry Chainsaw contributing page! We're super excited you've taken an interest in this project.
+Welcome to the The Bridge contributing page! We're super excited you've taken an interest in this project.
 
 ## Quickstart
 * Take a look at our [todo list](https://github.com/agajews/furry-chainsaw/TODO.md)
@@ -35,7 +35,7 @@ First bugs for contributors
   * When we start finding bugs, we'll add something here!
 
 ## New Feature Requirements
-When proposing new features either on slack or as github issues, make sure to include an intended use case. Yes, it would be nice if Furry Chainsaw could fly airplanes and blast music at strangers, we'd like to know why you want Furry Chainsaw to do these things.
+When proposing new features either on slack or as github issues, make sure to include an intended use case. Yes, it would be nice if The Bridge could fly airplanes and blast music at strangers, we'd like to know why you want The Bridge to do these things.
 
 ## Style Guide / Coding conventions
 Try to follow PEP8, and please use a linter. Pull requests that are not properly linted will be rejected until that has been fixed.
@@ -44,7 +44,7 @@ Try to follow PEP8, and please use a linter. Pull requests that are not properly
 Please be courteous to others and thoughtful before sharing potentially hurtful opinions.
 
 ## Recognition
-At the start of each new release of Furry Chainsaw, all contributors who submitted accepted pull requests to this repository will be recognized in a CONTRIBUTORS.md file.
+At the start of each new release of The Bridge, all contributors who submitted accepted pull requests to this repository will be recognized in a CONTRIBUTORS.md file.
 
 ## Where can I ask for help?
 Ask for help on slack, in a github issue, or send any core dev an email (our addresses are in our profiles). We're always happy to answer any questions you may have.

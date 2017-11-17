@@ -1,4 +1,4 @@
-# Furry Chainsaw
+# The Bridge
 ## Depression Detection -- Bringing People Together in Times of Need
 
 When we are depressed or feeling sad, talking to a friend is often the best way to find our center. However,
@@ -53,4 +53,4 @@ Like what you see? Check out our [contributing guide](https://github.com/CoinTK/
 
 # License
 
-Furry Chainsaw is [MIT licensed](http://mit-license.org/).
+The Bridge is [MIT licensed](http://mit-license.org/).

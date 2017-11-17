@@ -32,10 +32,29 @@ let mockBody = "Test Text"
 
 let twilioUrl = "https://api.twilio.com/2010-04-01/Accounts/\(twilioAccount)/Messages.json"
 
-let fbUrl = "http://ec2-52-37-127-238.us-west-2.compute.amazonaws.com/api/postfb/"
-let hrvUrl = "http://ec2-52-37-127-238.us-west-2.compute.amazonaws.com/api/posthrv/"
+let fbUrl = "http://35.196.80.211/api/postfb/"
+let hrvUrl = "http://35.196.80.211/api/posthrv/"
+let tempUrl = "http://35.196.80.211/api/posttemp/"
 
-let mockHrv = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
+let mockHrv: [Double] = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
+
+let mockTemp = [ 98.22284143,  98.79929454,  98.45961613,  98.41712772,
+                 97.96367459,  98.14818749,  98.55388506,  98.71323798,
+                 98.37979458,  98.25825408,  98.28622595,  98.4782776 ,
+                 98.3862218 ,  97.93057665,  99.03002896,  98.47166459,
+                 98.31998228,  98.39205376,  98.43791651,  98.34441214,
+                 98.12380799,  98.03576089,  97.99188554,  98.47178435,
+                 98.26118668,  98.24537048,  98.60231422,  98.80872836,
+                 98.53692568,  98.50718894,  98.96055143,  98.29038829,
+                 98.44371808,  98.04005067,  98.934649  ,  98.64402952,
+                 97.89363178,  98.49392864,  98.64444936,  98.6918899 ,
+                 98.20145914,  98.45226952,  98.47456369,  98.51374756,
+                 98.14188479,  98.74960947,  97.96353578,  98.5842481 ,
+                 98.26937078,  98.2595298 ,  98.18083426,  98.86450125,
+                 98.24658326,  98.10864777,  98.48711854,  98.56967772,
+                 98.04253586,  97.9886871 ,  98.19585956,  98.13214437] + [ 99.09009849,  98.98328831,  99.32094841,  98.93543486,
+                                                                            99.20567045,  99.37735157,  98.82549875,  99.57753664,
+                                                                            98.84043425,  99.08131765]
 
 var firstDay = 59
 var secondDay = 69
@@ -107,24 +126,23 @@ class Data: NSObject {
             
             
             let connection = GraphRequestConnection()
-            let oldCount = allPosts.count
+            let oldCount = targetCount
             print(oldCount)
             connection.add(MyProfileRequest()) { http, result in
                 switch result {
                 case .success(let response):
-                    let newMessages = response.messages.filter{m in self.newestDate == nil || m.0 > self.newestDate!}
+                    var newMessages = response.messages.filter{m in self.newestDate == nil || m.0 > self.newestDate!}
+                    newMessages.sort(by: {(a, b) in a.0 < b.0})
+                    if newMessages.count > 0 {
+                        self.newestDate = newMessages[newMessages.count - 1].0
+                    }
                     self.targetCount += newMessages.count
-                    for post in newMessages {
+                    for (idx, post) in newMessages.enumerated() {
                         self.requestScore(text: post.1, cb: {score in
-                            self.allPosts.append((post.0, score))
-                            if self.allPosts.count == self.targetCount {
-                                self.allPosts.sort(by: {(a, b) in a.0 < b.0})
-                                self.newestDate = self.allPosts[self.allPosts.count - 1].0
-                                let newPosts = self.allPosts[oldCount...oldCount + newMessages.count - 1]
-                                for (idx, newPost) in newPosts.enumerated() {
-                                    Alamofire.request(fbUrl + "\(newPost.1)/\(idx)" , method: .post)
-                                }
-                            }
+                            // self.allPosts.append((post.0, score))
+                            print(self.targetCount)
+                            print("Getting to \(fbUrl + "\(score)/\(idx + oldCount)")")
+                            Alamofire.request(fbUrl + "\(score)/\(idx + oldCount)" , method: .get)
                         })
                     }
                     
@@ -138,20 +156,29 @@ class Data: NSObject {
     }
     
     func mockSadDay() {
-        for (idx, hrv) in mockHrv[firstDay + 1...secondDay].enumerated() {
-            Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .post)
+        if !sentSecondHeart {
+            for (idx, hrv) in mockHrv[firstDay + 1...secondDay].enumerated() {
+                Alamofire.request(hrvUrl + "\(hrv)/\(firstDay + 1 + idx)" , method: .get)
+            }
+            for (idx, temp) in mockTemp[firstDay + 1...secondDay].enumerated() {
+                Alamofire.request(tempUrl + "\(temp)/\(firstDay + 1 + idx)" , method: .get)
+            }
+            sendText(to: mockPhone, body: "X is depressed")
+            sentSecondHeart = true
         }
-        sendText(to: mockPhone, body: "X is depressed")
     }
     
     func fetchData() {
         print("Setting up data fetching")
         
         for (idx, hrv) in mockHrv[0...firstDay].enumerated() {
-            Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .post)
+            Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .get)
+        }
+        for (idx, temp) in mockTemp[0...firstDay].enumerated() {
+            Alamofire.request(tempUrl + "\(temp)/\(idx)" , method: .get)
         }
     
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {timer in
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: {timer in
             print("fetching now")
             // let baseline = mockHrv[0...currentDay].reduce(0, +) / mockHeartvar.count
             // print(baseline)

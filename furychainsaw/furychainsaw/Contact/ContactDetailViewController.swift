@@ -10,13 +10,14 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
 
-    var sentFirstName : String = ""
-
-    @IBOutlet weak var firstnameLabel: UILabel!
+    var sentFullName : String = ""
+    var sentPhone : Int = 0
+    @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var fullName: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         // sets labels to corresponding cell values
-        firstnameLabel.text = sentFirstName
-
+        fullName.text = sentFullName
+        phone.text = String(sentPhone)
     }
     
     override func viewDidLoad() {

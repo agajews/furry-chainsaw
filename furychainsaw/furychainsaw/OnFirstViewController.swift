@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class OnFirstViewController: UIViewController, UITextFieldDelegate {
     var CON_KEY = "contacts_array"
 
@@ -80,7 +81,9 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
             // dismisses view
             dismiss(animated: true, completion: nil)
             // let description and phone number be optional
-        }        
+            data.fetchData()
+            
+        }
     }
     
     // shows appropriate alert

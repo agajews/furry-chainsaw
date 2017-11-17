@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:furychainsaw.xcodeproj">
+      location = "group:../../../contact.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../../home.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

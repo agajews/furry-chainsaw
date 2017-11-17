@@ -10,8 +10,6 @@
 		800081ED1FBE632A00EC050C /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081EB1FBE632A00EC050C /* ToneAnalyzerV3.framework */; };
 		800081F11FBE69FF00EC050C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081F01FBE69FF00EC050C /* Alamofire.framework */; };
 		800081F31FBE6D3800EC050C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800081F21FBE6D3800EC050C /* Data.swift */; };
-		800081F61FBE796B00EC050C /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 800081F41FBE796A00EC050C /* contacts.png */; };
-		800081F71FBE796B00EC050C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 800081F51FBE796B00EC050C /* home.png */; };
 		800082001FBE93A100EC050C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081FC1FBE93A000EC050C /* Bolts.framework */; };
 		800082011FBE93A100EC050C /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081FD1FBE93A000EC050C /* FacebookCore.framework */; };
 		800082021FBE93A100EC050C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081FE1FBE93A000EC050C /* FBSDKCoreKit.framework */; };
@@ -29,15 +27,16 @@
 		CF3F4AE31FBE4DC100399FC2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */; };
 		CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */; };
 		CF3F4AE71FBE5AC400399FC2 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */; };
-		CF3F4AF51FBE9F8B00399FC2 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AEE1FBE9F8200399FC2 /* Quicksand-Bold.otf */; };
-		CF3F4AF61FBE9F8B00399FC2 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AEF1FBE9F8300399FC2 /* Quicksand-Regular.otf */; };
-		CF3F4AF71FBE9F8B00399FC2 /* Quicksand-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AF01FBE9F8400399FC2 /* Quicksand-Italic.otf */; };
-		CF3F4AF81FBE9F8B00399FC2 /* Quicksand_Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AF11FBE9F8600399FC2 /* Quicksand_Dash.otf */; };
-		CF3F4AF91FBE9F8B00399FC2 /* Quicksand-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AF21FBE9F8700399FC2 /* Quicksand-LightItalic.otf */; };
-		CF3F4AFA1FBE9F8B00399FC2 /* Quicksand-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AF31FBE9F8900399FC2 /* Quicksand-BoldItalic.otf */; };
-		CF3F4AFB1FBE9F8B00399FC2 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AF41FBE9F8A00399FC2 /* Quicksand-Light.otf */; };
-		CF3F4B021FBEA18800399FC2 /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4B001FBEA18800399FC2 /* contact.png */; };
-		CF3F4B031FBEA18800399FC2 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4B011FBEA18800399FC2 /* home.png */; };
+		CFD82DA41FBF434000D92F81 /* Quicksand-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82D9D1FBF431000D92F81 /* Quicksand-LightItalic.otf */; };
+		CFD82DA51FBF434000D92F81 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82D9E1FBF431500D92F81 /* Quicksand-Regular.otf */; };
+		CFD82DA61FBF434000D92F81 /* Quicksand_Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82D9F1FBF431C00D92F81 /* Quicksand_Dash.otf */; };
+		CFD82DA71FBF434000D92F81 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DA01FBF432300D92F81 /* Quicksand-Bold.otf */; };
+		CFD82DA81FBF434000D92F81 /* Quicksand-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DA11FBF432A00D92F81 /* Quicksand-Italic.otf */; };
+		CFD82DA91FBF434000D92F81 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DA21FBF433100D92F81 /* Quicksand-Light.otf */; };
+		CFD82DAA1FBF434000D92F81 /* Quicksand-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DA31FBF433800D92F81 /* Quicksand-BoldItalic.otf */; };
+		CFD82DAD1FBF43EC00D92F81 /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DAB1FBF43EC00D92F81 /* contact.png */; };
+		CFD82DB01FBF445400D92F81 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DAF1FBF445400D92F81 /* home.png */; };
+		CFD82DB61FBF522800D92F81 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = CFD82DB51FBF522800D92F81 /* b.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +54,6 @@
 		800081EC1FBE632A00EC050C /* SiestaUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiestaUI.framework; path = Carthage/Build/iOS/SiestaUI.framework; sourceTree = "<group>"; };
 		800081F01FBE69FF00EC050C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		800081F21FBE6D3800EC050C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		800081F41FBE796A00EC050C /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
-		800081F51FBE796B00EC050C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		800081FC1FBE93A000EC050C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		800081FD1FBE93A000EC050C /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		800081FE1FBE93A000EC050C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -78,15 +75,16 @@
 		CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
-		CF3F4AEE1FBE9F8200399FC2 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.otf"; path = "../../../../../Downloads/quicksand/Quicksand-Bold.otf"; sourceTree = "<group>"; };
-		CF3F4AEF1FBE9F8300399FC2 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Regular.otf"; path = "../../../Downloads/quicksand/Quicksand-Regular.otf"; sourceTree = SOURCE_ROOT; };
-		CF3F4AF01FBE9F8400399FC2 /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Italic.otf"; path = "../../../../../Downloads/quicksand/Quicksand-Italic.otf"; sourceTree = "<group>"; };
-		CF3F4AF11FBE9F8600399FC2 /* Quicksand_Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Quicksand_Dash.otf; path = ../../../../../Downloads/quicksand/Quicksand_Dash.otf; sourceTree = "<group>"; };
-		CF3F4AF21FBE9F8700399FC2 /* Quicksand-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-LightItalic.otf"; path = "../../../../../Downloads/quicksand/Quicksand-LightItalic.otf"; sourceTree = "<group>"; };
-		CF3F4AF31FBE9F8900399FC2 /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-BoldItalic.otf"; path = "../../../../../Downloads/quicksand/Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
-		CF3F4AF41FBE9F8A00399FC2 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.otf"; path = "../../../../../Downloads/quicksand/Quicksand-Light.otf"; sourceTree = "<group>"; };
-		CF3F4B001FBEA18800399FC2 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact.png; path = ../../../../contact.png; sourceTree = "<group>"; };
-		CF3F4B011FBEA18800399FC2 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../../home.png; sourceTree = "<group>"; };
+		CFD82D9D1FBF431000D92F81 /* Quicksand-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-LightItalic.otf"; sourceTree = "<group>"; };
+		CFD82D9E1FBF431500D92F81 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		CFD82D9F1FBF431C00D92F81 /* Quicksand_Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand_Dash.otf; sourceTree = "<group>"; };
+		CFD82DA01FBF432300D92F81 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		CFD82DA11FBF432A00D92F81 /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Italic.otf"; sourceTree = "<group>"; };
+		CFD82DA21FBF433100D92F81 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
+		CFD82DA31FBF433800D92F81 /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
+		CFD82DAB1FBF43EC00D92F81 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact.png; path = ../../../../contact.png; sourceTree = "<group>"; };
+		CFD82DAF1FBF445400D92F81 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../../home.png; sourceTree = "<group>"; };
+		CFD82DB51FBF522800D92F81 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28A654BB542EDCCCE39A80B1 /* Pods_furychainsawUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +188,9 @@
 		CF3F4AE81FBE6A8000399FC2 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				CF3F4B001FBEA18800399FC2 /* contact.png */,
-				CF3F4B011FBEA18800399FC2 /* home.png */,
+				CFD82DB51FBF522800D92F81 /* b.png */,
+				CFD82DAF1FBF445400D92F81 /* home.png */,
+				CFD82DAB1FBF43EC00D92F81 /* contact.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -200,26 +198,15 @@
 		CF3F4AED1FBE9F1B00399FC2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CF3F4AF11FBE9F8600399FC2 /* Quicksand_Dash.otf */,
-				CF3F4AEE1FBE9F8200399FC2 /* Quicksand-Bold.otf */,
-				CF3F4AF31FBE9F8900399FC2 /* Quicksand-BoldItalic.otf */,
-				CF3F4AF01FBE9F8400399FC2 /* Quicksand-Italic.otf */,
-				CF3F4AF41FBE9F8A00399FC2 /* Quicksand-Light.otf */,
-				CF3F4AF21FBE9F8700399FC2 /* Quicksand-LightItalic.otf */,
-				CF3F4AEF1FBE9F8300399FC2 /* Quicksand-Regular.otf */,
+				CFD82D9F1FBF431C00D92F81 /* Quicksand_Dash.otf */,
+				CFD82DA01FBF432300D92F81 /* Quicksand-Bold.otf */,
+				CFD82DA31FBF433800D92F81 /* Quicksand-BoldItalic.otf */,
+				CFD82DA11FBF432A00D92F81 /* Quicksand-Italic.otf */,
+				CFD82DA21FBF433100D92F81 /* Quicksand-Light.otf */,
+				CFD82D9D1FBF431000D92F81 /* Quicksand-LightItalic.otf */,
+				CFD82D9E1FBF431500D92F81 /* Quicksand-Regular.otf */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D548240546ED4BE0E6680174 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1F215454A6FD9D6EB5612657 /* Pods-furychainsaw.debug.xcconfig */,
-				3B06D06652E0A47B7B0CCC64 /* Pods-furychainsaw.release.xcconfig */,
-				9F4AB4DCA83C8F6A7CD43FC7 /* Pods-furychainsawUITests.debug.xcconfig */,
-				51045A704F148BDFE63C41FF /* Pods-furychainsawUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +216,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF3F4AD51FBE378200399FC2 /* Build configuration list for PBXNativeTarget "furychainsaw" */;
 			buildPhases = (
-				AFFA874A5BF4C54B3A352E48 /* [CP] Check Pods Manifest.lock */,
 				CF3F4AB41FBE378200399FC2 /* Sources */,
 				CF3F4AB51FBE378200399FC2 /* Frameworks */,
 				CF3F4AB61FBE378200399FC2 /* Resources */,
@@ -248,12 +234,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF3F4AD81FBE378200399FC2 /* Build configuration list for PBXNativeTarget "furychainsawUITests" */;
 			buildPhases = (
-				834B8C76B18705517C480724 /* [CP] Check Pods Manifest.lock */,
 				CF3F4AC81FBE378200399FC2 /* Sources */,
 				CF3F4AC91FBE378200399FC2 /* Frameworks */,
 				CF3F4ACA1FBE378200399FC2 /* Resources */,
-				8071B51248673B0F8EA761BC /* [CP] Embed Pods Frameworks */,
-				FAFDC6CD22BCF1849315011F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,18 +293,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3F4B021FBEA18800399FC2 /* contact.png in Resources */,
-				CF3F4AF51FBE9F8B00399FC2 /* Quicksand-Bold.otf in Resources */,
-				CF3F4AF71FBE9F8B00399FC2 /* Quicksand-Italic.otf in Resources */,
-				CF3F4AFA1FBE9F8B00399FC2 /* Quicksand-BoldItalic.otf in Resources */,
+				CFD82DA61FBF434000D92F81 /* Quicksand_Dash.otf in Resources */,
+				CFD82DA41FBF434000D92F81 /* Quicksand-LightItalic.otf in Resources */,
+				CFD82DA51FBF434000D92F81 /* Quicksand-Regular.otf in Resources */,
+				CFD82DA91FBF434000D92F81 /* Quicksand-Light.otf in Resources */,
+				CFD82DAA1FBF434000D92F81 /* Quicksand-BoldItalic.otf in Resources */,
+				CFD82DA81FBF434000D92F81 /* Quicksand-Italic.otf in Resources */,
 				CF3F4AC61FBE378200399FC2 /* LaunchScreen.storyboard in Resources */,
-				CF3F4AF91FBE9F8B00399FC2 /* Quicksand-LightItalic.otf in Resources */,
-				CF3F4AFB1FBE9F8B00399FC2 /* Quicksand-Light.otf in Resources */,
+				CFD82DB61FBF522800D92F81 /* b.png in Resources */,
+				CFD82DA71FBF434000D92F81 /* Quicksand-Bold.otf in Resources */,
+				CFD82DB01FBF445400D92F81 /* home.png in Resources */,
 				CF3F4AC31FBE378200399FC2 /* Assets.xcassets in Resources */,
-				CF3F4B031FBEA18800399FC2 /* home.png in Resources */,
-				CF3F4AF61FBE9F8B00399FC2 /* Quicksand-Regular.otf in Resources */,
-				CF3F4AF81FBE9F8B00399FC2 /* Quicksand_Dash.otf in Resources */,
 				CF3F4AC11FBE378200399FC2 /* Main.storyboard in Resources */,
+				CFD82DAD1FBF43EC00D92F81 /* contact.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +505,6 @@
 		};
 		CF3F4AD61FBE378200399FC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F215454A6FD9D6EB5612657 /* Pods-furychainsaw.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,7 +524,6 @@
 		};
 		CF3F4AD71FBE378200399FC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B06D06652E0A47B7B0CCC64 /* Pods-furychainsaw.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,7 +543,6 @@
 		};
 		CF3F4AD91FBE378200399FC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F4AB4DCA83C8F6A7CD43FC7 /* Pods-furychainsawUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,7 +558,6 @@
 		};
 		CF3F4ADA1FBE378200399FC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51045A704F148BDFE63C41FF /* Pods-furychainsawUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

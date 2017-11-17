@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../contact.png">
+      location = "group:../../../home.png">
    </FileRef>
    <FileRef
       location = "group:../../../home.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../../id-card.png">
    </FileRef>
    <FileRef
       location = "self:">

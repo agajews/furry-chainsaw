@@ -22,12 +22,12 @@ class ContactBookViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var table: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        print("test1")
+        // print("test1")
         // get the names of all athletes
         if let data = defaults.data(forKey: CON_KEY), let myContacts = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Contact] {
             contacts = myContacts
-            print("test")
-            print(contacts.count)
+            // print("test")
+            // print(contacts.count)
         }
         table.reloadData()
     }

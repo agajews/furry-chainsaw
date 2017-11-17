@@ -9,26 +9,14 @@
 import UIKit
 
 class MainController: UIViewController, UITextFieldDelegate {
-
-    
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-  
     
     override func viewDidAppear(_ animated: Bool) {
         // if this is true, then don't popup view
         if let _ = UserDefaults.standard.value(forKey: "fffirst") {
+            data.fetchData()
         }else {
             // manages the onboarding screen
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -37,8 +25,6 @@ class MainController: UIViewController, UITextFieldDelegate {
             self.present(controller, animated: true, completion: nil)
         }
     }
-
-
 
 }
 

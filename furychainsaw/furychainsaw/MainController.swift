@@ -19,7 +19,7 @@ class MainController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // if this is true, then don't popup view
         if let _ = UserDefaults.standard.value(forKey: "fffirst") {
-            data.fetchData()
+            // data.fetchData()
         }else {
             // manages the onboarding screen
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

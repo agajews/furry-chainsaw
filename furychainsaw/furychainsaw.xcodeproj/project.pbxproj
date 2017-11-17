@@ -10,6 +10,8 @@
 		800081ED1FBE632A00EC050C /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081EB1FBE632A00EC050C /* ToneAnalyzerV3.framework */; };
 		800081F11FBE69FF00EC050C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800081F01FBE69FF00EC050C /* Alamofire.framework */; };
 		800081F31FBE6D3800EC050C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800081F21FBE6D3800EC050C /* Data.swift */; };
+		800081F61FBE796B00EC050C /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 800081F41FBE796A00EC050C /* contacts.png */; };
+		800081F71FBE796B00EC050C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 800081F51FBE796B00EC050C /* home.png */; };
 		CF3F4ABC1FBE378200399FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4ABB1FBE378200399FC2 /* AppDelegate.swift */; };
 		CF3F4ABE1FBE378200399FC2 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4ABD1FBE378200399FC2 /* MainController.swift */; };
 		CF3F4AC11FBE378200399FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4ABF1FBE378200399FC2 /* Main.storyboard */; };
@@ -22,8 +24,6 @@
 		CF3F4AE31FBE4DC100399FC2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */; };
 		CF3F4AE51FBE4F3B00399FC2 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */; };
 		CF3F4AE71FBE5AC400399FC2 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */; };
-		CF3F4AEB1FBE6A8E00399FC2 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AE91FBE6A8D00399FC2 /* home.png */; };
-		CF3F4AEC1FBE6A8E00399FC2 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3F4AEA1FBE6A8D00399FC2 /* contacts.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,8 @@
 		800081EC1FBE632A00EC050C /* SiestaUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiestaUI.framework; path = Carthage/Build/iOS/SiestaUI.framework; sourceTree = "<group>"; };
 		800081F01FBE69FF00EC050C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		800081F21FBE6D3800EC050C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		800081F41FBE796A00EC050C /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
+		800081F51FBE796B00EC050C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		CF3F4AB81FBE378200399FC2 /* furychainsaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = furychainsaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F4ABB1FBE378200399FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF3F4ABD1FBE378200399FC2 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
-		CF3F4AE91FBE6A8D00399FC2 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../../home.png; sourceTree = "<group>"; };
-		CF3F4AEA1FBE6A8D00399FC2 /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contacts.png; path = ../../../../contacts.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +151,8 @@
 		CF3F4AE81FBE6A8000399FC2 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				CF3F4AEA1FBE6A8D00399FC2 /* contacts.png */,
-				CF3F4AE91FBE6A8D00399FC2 /* home.png */,
+				800081F41FBE796A00EC050C /* contacts.png */,
+				800081F51FBE796B00EC050C /* home.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -241,11 +241,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3F4AEB1FBE6A8E00399FC2 /* home.png in Resources */,
+				800081F61FBE796B00EC050C /* contacts.png in Resources */,
+				800081F71FBE796B00EC050C /* home.png in Resources */,
 				CF3F4AC61FBE378200399FC2 /* LaunchScreen.storyboard in Resources */,
 				CF3F4AC31FBE378200399FC2 /* Assets.xcassets in Resources */,
 				CF3F4AC11FBE378200399FC2 /* Main.storyboard in Resources */,
-				CF3F4AEC1FBE6A8E00399FC2 /* contacts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,11 +443,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4BXTUE4S6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				DEVELOPMENT_TEAM = W4BXTUE4S6;
 				INFOPLIST_FILE = furychainsaw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AshwinAggarwal.furychainsaw;
@@ -462,11 +462,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4BXTUE4S6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				DEVELOPMENT_TEAM = W4BXTUE4S6;
 				INFOPLIST_FILE = furychainsaw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AshwinAggarwal.furychainsaw;

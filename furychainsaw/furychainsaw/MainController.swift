@@ -9,6 +9,9 @@
 import UIKit
 
 class MainController: UIViewController, UITextFieldDelegate {
+    @IBAction func mockSadDay(_ sender: Any) {
+        data.mockSadDay()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }

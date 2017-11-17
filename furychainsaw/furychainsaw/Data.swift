@@ -29,8 +29,15 @@ let mockBody = "Test Text"
 
 let twilioUrl = "https://api.twilio.com/2010-04-01/Accounts/\(twilioAccount)/Messages.json"
 
+let mockHeartvar = [
+    107, 71, 102, 100, 95, 78, 90, 85, 107, 81, 70, 68, 70, 83, 70, 72, 74, 71, 69, 78, 83, 96, 67, 101, 74, 80, 78, 82, 47, 61, 77, 86, 52, 116, 69, 56, 67, 62, 84, 74, 52, 53, 88, 52, 64, 81, 62, 46, 39, 61, 71, 32, 41, 86, 55, 33, 48, 40, 62, 55, 29, 55, 86, 52, 35, 45, 49, 53, 69, 76
+]
+
+var currentDay = 60
+
 
 class Data: NSObject {
+    var lowVariability = false
     func requestScore(text: String, cb: @escaping (Double) -> Void) {
         toneAnalyzer.getTone(ofText: text, failure: failure) { tones in
             var sadness: Double = 0
@@ -57,6 +64,11 @@ class Data: NSObject {
         }
     }
     
+    func mockSadDay() {
+        lowVariability = true
+        currentDay = 69
+    }
+    
     func fetchData() {
         print("Fetching data")
         requestScore(text: "I'm feeling pretty sad right now", cb: {sadness in
@@ -66,6 +78,8 @@ class Data: NSObject {
     
     var timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {timer in
         print("fetching now")
+        let baseline = mockHeartvar[0...currentDay].reduce(0, +) / mockHeartvar.count
+        print(baseline)
     })
 }
 

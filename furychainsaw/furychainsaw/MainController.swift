@@ -12,8 +12,10 @@ class MainController: UIViewController, UITextFieldDelegate {
     @IBAction func mockSadDay(_ sender: Any) {
         data.mockSadDay()
     }
+    @IBOutlet weak var mocksadday: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mocksadday.layer.cornerRadius = 4
     }
     
     override func viewDidAppear(_ animated: Bool) {

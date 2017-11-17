@@ -19,11 +19,13 @@ class NewContactViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var phoneField: UITextField!
     
+    @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.firstnameField.delegate = self
         self.lastnameField.delegate = self
         self.phoneField.delegate = self
+        addButton.layer.cornerRadius = 4
     }
     
     func dismissKeyboard(){ /*this is a void function*/

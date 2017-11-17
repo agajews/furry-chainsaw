@@ -19,6 +19,7 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastname_1: UITextField!
     @IBOutlet weak var phone_1: UITextField!
     
+    @IBOutlet weak var submitButton: UIButton!
     
     let defaults = UserDefaults.standard
 
@@ -28,7 +29,7 @@ class OnFirstViewController: UIViewController, UITextFieldDelegate {
         self.firstname_1.delegate = self
         self.lastname_1.delegate = self
         self.phone_1.delegate = self
-        
+        submitButton.layer.cornerRadius = 4
         let loginButton = LoginButton(readPermissions: [ .publicProfile, ReadPermission.custom("user_posts") ])
         loginButton.center = view.center
         

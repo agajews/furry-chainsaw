@@ -33,10 +33,14 @@ let mockBody = "Test Text"
 let twilioUrl = "https://api.twilio.com/2010-04-01/Accounts/\(twilioAccount)/Messages.json"
 
 let fbUrl = "http://ec2-52-37-127-238.us-west-2.compute.amazonaws.com/api/postfb/"
+let hrvUrl = "http://ec2-52-37-127-238.us-west-2.compute.amazonaws.com/api/posthrv/"
 
-let mockHeartvar = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
+let mockHrv = [72, 75, 69, 75, 77, 82, 90, 76, 66, 70, 80, 70, 63, 65, 79, 86, 80, 73, 78, 65, 83, 71, 71, 94, 91, 76, 67, 77, 72, 70, 54, 65, 78, 71, 72, 65, 76, 64, 99, 61, 69, 79, 79, 78, 72, 93, 83, 76, 87, 73, 69, 74, 82, 72, 60, 84, 86, 66, 66, 59, 37, 44, 53, 57, 54, 52, 36, 40, 38, 33]
 
-var currentDay = 60
+var firstDay = 59
+var secondDay = 69
+var sentFirstHeart = false
+var sentSecondHeart = false
 
 
 class Data: NSObject {
@@ -134,17 +138,23 @@ class Data: NSObject {
     }
     
     func mockSadDay() {
-        lowVariability = true
-        currentDay = 69
+        for (idx, hrv) in mockHrv[firstDay + 1...secondDay].enumerated() {
+            Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .post)
+        }
+        sendText(to: mockPhone, body: "X is depressed")
     }
     
     func fetchData() {
         print("Setting up data fetching")
+        
+        for (idx, hrv) in mockHrv[0...firstDay].enumerated() {
+            Alamofire.request(hrvUrl + "\(hrv)/\(idx)" , method: .post)
+        }
     
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {timer in
             print("fetching now")
-            let baseline = mockHeartvar[0...currentDay].reduce(0, +) / mockHeartvar.count
-            print(baseline)
+            // let baseline = mockHrv[0...currentDay].reduce(0, +) / mockHeartvar.count
+            // print(baseline)
             
             self.updatePosts()
         })

@@ -83,6 +83,7 @@
 		CF3F4AE21FBE4DC100399FC2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		CF3F4AE41FBE4F3B00399FC2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		CF3F4AE61FBE5AC400399FC2 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		CFD82DB51FBF522800D92F81 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +189,7 @@
 			children = (
 				80D3DBC91FBF445F00E4FA26 /* contact.png */,
 				80D3DBC81FBF445F00E4FA26 /* home.png */,
+				CFD82DB51FBF522800D92F81 /* b.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
